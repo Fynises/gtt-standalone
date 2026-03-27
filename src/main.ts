@@ -2,6 +2,7 @@ import { RefreshingAuthProvider } from '@twurple/auth';
 import { config, initializeTokens } from './config.ts';
 import { ApiClient } from '@twurple/api';
 import { EventSubWsListener } from '@twurple/eventsub-ws';
+// @ts-types="npm:@types/node-osc"
 import { Client } from 'node-osc';
 
 const authProvider = new RefreshingAuthProvider({

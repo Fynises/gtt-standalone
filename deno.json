@@ -9,6 +9,7 @@
     "@twurple/api": "npm:@twurple/api@^8.0.2",
     "@twurple/auth": "npm:@twurple/auth@^8.0.2",
     "@twurple/eventsub-ws": "npm:@twurple/eventsub-ws@^8.0.2",
+    "@types/node-osc": "npm:@types/node-osc@^9.1.0",
     "ky": "npm:ky@^1.14.0",
     "node-osc": "npm:node-osc@^11.1.1",
     "open": "npm:open@^11.0.0",
