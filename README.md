@@ -7,13 +7,13 @@ Requires [Deno](https://deno.com/) to be installed.
 **Linux:**
 
 ```sh
-deno compile --allow-net --allow-read --allow-write --output gtt-standalone ./src/main.ts
+deno compile --allow-net --allow-read --allow-write --no-check --output gtt-standalone ./src/main.ts
 ```
 
 **Windows** (cross-compile from Linux, or run natively on Windows):
 
 ```sh
-deno compile --target x86_64-pc-windows-msvc --allow-net --allow-read --allow-write --output gtt-standalone ./src/main.ts
+deno compile --target x86_64-pc-windows-msvc --allow-net --allow-read --allow-write --no-check --output gtt-standalone ./src/main.ts
 ```
 
 This will produce `gtt-standalone` (Linux) or `gtt-standalone.exe` (Windows).
