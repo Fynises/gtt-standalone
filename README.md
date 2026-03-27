@@ -1,5 +1,23 @@
 # giggletech twitch standalone
 
+## building
+
+Requires [Deno](https://deno.com/) to be installed.
+
+**Linux:**
+
+```sh
+deno compile --allow-net --allow-read --allow-write --output gtt-standalone ./src/main.ts
+```
+
+**Windows** (cross-compile from Linux, or run natively on Windows):
+
+```sh
+deno compile --target x86_64-pc-windows-msvc --allow-net --allow-read --allow-write --output gtt-standalone ./src/main.ts
+```
+
+This will produce `gtt-standalone` (Linux) or `gtt-standalone.exe` (Windows).
+
 ## how to use
 
 ### Twitch Setup
@@ -67,5 +85,3 @@ triggers:
     duration: 3  # duration of the haptic trigger in seconds
     strength: 30 # strength of the haptic, similar to the original giggletech config.
 ```
-
-Restart the app.
