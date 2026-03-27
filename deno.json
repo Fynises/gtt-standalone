@@ -12,7 +12,6 @@
     "ky": "npm:ky@^1.14.0",
     "node-osc": "npm:node-osc@^11.1.1",
     "open": "npm:open@^11.0.0",
-    "osc": "npm:osc@^2.4.5",
     "typebox": "npm:typebox@^1.0.61"
   },
   "fmt": {

@@ -2,7 +2,7 @@ import { RefreshingAuthProvider } from '@twurple/auth';
 import { config, initializeTokens } from './config.ts';
 import { ApiClient } from '@twurple/api';
 import { EventSubWsListener } from '@twurple/eventsub-ws';
-import osc from 'osc';
+import { Client } from 'node-osc';
 
 const authProvider = new RefreshingAuthProvider({
   clientId: config['twitch']['auth']['client_id'],
@@ -23,21 +23,7 @@ listener.start();
 
 // start OSC
 
-const oscPort = new osc.UDPPort({
-  localAddress: config['osc']['device_ip'],
-  localPort: config['osc']['port'],
-});
-
-oscPort.open();
-
-oscPort.on('ready', () => {
-  console.log('OSC ready');
-});
-
-// deno-lint-ignore no-explicit-any
-oscPort.on('error', (e: any) => {
-  console.error('error occurred in OSC', e);
-});
+const oscClient = new Client(config['osc']['device_ip'], config['osc']['port']);
 
 // convert the triggers array to a map
 const triggers = new Map(config['triggers'].map((t) => [t.redemption_id, t]));
@@ -47,28 +33,12 @@ listener.onChannelRedemptionAdd(user, (e) => {
   const trigger = triggers.get(e.id);
   if (trigger === undefined) return;
   const handle = setInterval(() => {
-    oscPort.send({
-      address: config['osc']['device_ip'],
-      args: [
-        {
-          type: 'i',
-          value: trigger['strength'],
-        },
-      ],
-    });
+    oscClient.send('/avatar/parameters/motor', trigger['strength']);
   }, 500);
   setTimeout(() => {
     clearInterval(handle);
   }, trigger['duration'] * 1000);
   for (let i = 0; i < 3; i++) {
-    oscPort.send({
-      address: config['osc']['device_ip'],
-      args: [
-        {
-          type: 'i',
-          value: 0,
-        },
-      ],
-    });
+    oscClient.send('/avatar/parameters/motor', 0);
   }
 });

@@ -10,7 +10,6 @@
     "npm:ky@^1.14.0": "1.14.0",
     "npm:node-osc@^11.1.1": "11.1.1",
     "npm:open@11": "11.0.0",
-    "npm:osc@^2.4.5": "2.4.5",
     "npm:typebox@^1.0.61": "1.0.61"
   },
   "jsr": {
@@ -44,7 +43,7 @@
         "@d-fischer/typed-event-emitter",
         "@types/ws",
         "tslib",
-        "ws@8.18.3"
+        "ws"
       ]
     },
     "@d-fischer/detect-node@3.0.1": {
@@ -53,7 +52,7 @@
     "@d-fischer/isomorphic-ws@7.0.2_ws@8.18.3": {
       "integrity": "sha512-xK+qIJUF0ne3dsjq5Y3BviQ4M+gx9dzkN+dPP7abBMje4YRfow+X9jBgeEoTe5e+Q6+8hI9R0b37Okkk8Vf0hQ==",
       "dependencies": [
-        "ws@8.18.3"
+        "ws"
       ]
     },
     "@d-fischer/logger@4.2.4": {
@@ -82,76 +81,6 @@
       "integrity": "sha512-OvSEOa8icfdWDqcRtjSEZtgJTFOFNgTjje7zaL0+nAtu2/kZtRCSK5wUMrI/aXtCH8o0Qz2vA8UqkhWUTARFQQ==",
       "dependencies": [
         "tslib"
-      ]
-    },
-    "@serialport/binding-mock@10.2.2": {
-      "integrity": "sha512-HAFzGhk9OuFMpuor7aT5G1ChPgn5qSsklTFOTUX72Rl6p0xwcSVsRtG/xaGp6bxpN7fI9D/S8THLBWbBgS6ldw==",
-      "dependencies": [
-        "@serialport/bindings-interface",
-        "debug"
-      ]
-    },
-    "@serialport/bindings-cpp@12.0.1": {
-      "integrity": "sha512-r2XOwY2dDvbW7dKqSPIk2gzsr6M6Qpe9+/Ngs94fNaNlcTRCV02PfaoDmRgcubpNVVcLATlxSxPTIDw12dbKOg==",
-      "dependencies": [
-        "@serialport/bindings-interface",
-        "@serialport/parser-readline@11.0.0",
-        "debug",
-        "node-addon-api",
-        "node-gyp-build"
-      ],
-      "scripts": true
-    },
-    "@serialport/bindings-interface@1.2.2": {
-      "integrity": "sha512-CJaUd5bLvtM9c5dmO9rPBHPXTa9R2UwpkJ0wdh9JCYcbrPWsKz+ErvR0hBLeo7NPeiFdjFO4sonRljiw4d2XiA=="
-    },
-    "@serialport/parser-byte-length@12.0.0": {
-      "integrity": "sha512-0ei0txFAj+s6FTiCJFBJ1T2hpKkX8Md0Pu6dqMrYoirjPskDLJRgZGLqoy3/lnU1bkvHpnJO+9oJ3PB9v8rNlg=="
-    },
-    "@serialport/parser-cctalk@12.0.0": {
-      "integrity": "sha512-0PfLzO9t2X5ufKuBO34DQKLXrCCqS9xz2D0pfuaLNeTkyGUBv426zxoMf3rsMRodDOZNbFblu3Ae84MOQXjnZw=="
-    },
-    "@serialport/parser-delimiter@11.0.0": {
-      "integrity": "sha512-aZLJhlRTjSmEwllLG7S4J8s8ctRAS0cbvCpO87smLvl3e4BgzbVgF6Z6zaJd3Aji2uSiYgfedCdNc4L6W+1E2g=="
-    },
-    "@serialport/parser-delimiter@12.0.0": {
-      "integrity": "sha512-gu26tVt5lQoybhorLTPsH2j2LnX3AOP2x/34+DUSTNaUTzu2fBXw+isVjQJpUBFWu6aeQRZw5bJol5X9Gxjblw=="
-    },
-    "@serialport/parser-inter-byte-timeout@12.0.0": {
-      "integrity": "sha512-GnCh8K0NAESfhCuXAt+FfBRz1Cf9CzIgXfp7SdMgXwrtuUnCC/yuRTUFWRvuzhYKoAo1TL0hhUo77SFHUH1T/w=="
-    },
-    "@serialport/parser-packet-length@12.0.0": {
-      "integrity": "sha512-p1hiCRqvGHHLCN/8ZiPUY/G0zrxd7gtZs251n+cfNTn+87rwcdUeu9Dps3Aadx30/sOGGFL6brIRGK4l/t7MuQ=="
-    },
-    "@serialport/parser-readline@11.0.0": {
-      "integrity": "sha512-rRAivhRkT3YO28WjmmG4FQX6L+KMb5/ikhyylRfzWPw0nSXy97+u07peS9CbHqaNvJkMhH1locp2H36aGMOEIA==",
-      "dependencies": [
-        "@serialport/parser-delimiter@11.0.0"
-      ]
-    },
-    "@serialport/parser-readline@12.0.0": {
-      "integrity": "sha512-O7cywCWC8PiOMvo/gglEBfAkLjp/SENEML46BXDykfKP5mTPM46XMaX1L0waWU6DXJpBgjaL7+yX6VriVPbN4w==",
-      "dependencies": [
-        "@serialport/parser-delimiter@12.0.0"
-      ]
-    },
-    "@serialport/parser-ready@12.0.0": {
-      "integrity": "sha512-ygDwj3O4SDpZlbrRUraoXIoIqb8sM7aMKryGjYTIF0JRnKeB1ys8+wIp0RFMdFbO62YriUDextHB5Um5cKFSWg=="
-    },
-    "@serialport/parser-regex@12.0.0": {
-      "integrity": "sha512-dCAVh4P/pZrLcPv9NJ2mvPRBg64L5jXuiRxIlyxxdZGH4WubwXVXY/kBTihQmiAMPxbT3yshSX8f2+feqWsxqA=="
-    },
-    "@serialport/parser-slip-encoder@12.0.0": {
-      "integrity": "sha512-0APxDGR9YvJXTRfY+uRGhzOhTpU5akSH183RUcwzN7QXh8/1jwFsFLCu0grmAUfi+fItCkR+Xr1TcNJLR13VNA=="
-    },
-    "@serialport/parser-spacepacket@12.0.0": {
-      "integrity": "sha512-dozONxhPC/78pntuxpz/NOtVps8qIc/UZzdc/LuPvVsqCoJXiRxOg6ZtCP/W58iibJDKPZPAWPGYeZt9DJxI+Q=="
-    },
-    "@serialport/stream@12.0.0": {
-      "integrity": "sha512-9On64rhzuqKdOQyiYLYv2lQOh3TZU/D3+IWCR5gk0alPel2nwpp4YwDEGiUBfrQZEdQ6xww0PWkzqth4wqwX3Q==",
-      "dependencies": [
-        "@serialport/bindings-interface",
-        "debug"
       ]
     },
     "@twurple/api-call@8.0.2": {
@@ -241,12 +170,6 @@
         "run-applescript"
       ]
     },
-    "debug@4.3.4": {
-      "integrity": "sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==",
-      "dependencies": [
-        "ms"
-      ]
-    },
     "default-browser-id@5.0.1": {
       "integrity": "sha512-x1VCxdX4t+8wVfd1so/9w+vQ4vx7lKd2Qp5tDRutErwmR85OgmfX7RlLRMWafRMY7hbEiXIbudNrjOAPa/hL8Q=="
     },
@@ -286,19 +209,6 @@
     "ky@1.14.0": {
       "integrity": "sha512-Rczb6FMM6JT0lvrOlP5WUOCB7s9XKxzwgErzhKlKde1bEV90FXplV1o87fpt4PU/asJFiqjYJxAJyzJhcrxOsQ=="
     },
-    "long@4.0.0": {
-      "integrity": "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA=="
-    },
-    "ms@2.1.2": {
-      "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
-    },
-    "node-addon-api@7.0.0": {
-      "integrity": "sha512-vgbBJTS4m5/KkE16t5Ly0WW9hz46swAstv0hYYwMtbG7AznRhNyfLRe8HZAiWIpcHzoO7HxhLuBQj9rJ/Ho0ZA=="
-    },
-    "node-gyp-build@4.6.0": {
-      "integrity": "sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==",
-      "bin": true
-    },
     "node-osc@11.1.1": {
       "integrity": "sha512-AYGsrwWHSD04Wm6hc1Sn1MZFHnUZytM40b5uiB7SJEMmMdXz/9g/8Io7da53kfALIsGmMq5PkQGIaT392VwD0A=="
     },
@@ -313,18 +223,6 @@
         "wsl-utils"
       ]
     },
-    "osc@2.4.5": {
-      "integrity": "sha512-Nc4/qcl+vA/CMxiKS1xrYgzjfnyB3W94gZnrkn3eTzihlndbEml6+wj1YQNKBI4r+qrw3obCcEoU7SVH/OxpxA==",
-      "dependencies": [
-        "long",
-        "slip",
-        "wolfy87-eventemitter",
-        "ws@8.18.0"
-      ],
-      "optionalDependencies": [
-        "serialport"
-      ]
-    },
     "powershell-utils@0.1.0": {
       "integrity": "sha512-dM0jVuXJPsDN6DvRpea484tCUaMiXWjuCn++HGTqUWzGDjv5tZkEZldAJ/UMlqRYGFrD/etByo4/xOuC/snX2A=="
     },
@@ -334,28 +232,6 @@
     "run-applescript@7.1.0": {
       "integrity": "sha512-DPe5pVFaAsinSaV6QjQ6gdiedWDcRCbUuiQfQa2wmWV7+xC9bGulGI8+TdRmoFkAPaBXk8CrAbnlY2ISniJ47Q=="
     },
-    "serialport@12.0.0": {
-      "integrity": "sha512-AmH3D9hHPFmnF/oq/rvigfiAouAKyK/TjnrkwZRYSFZxNggJxwvbAbfYrLeuvq7ktUdhuHdVdSjj852Z55R+uA==",
-      "dependencies": [
-        "@serialport/binding-mock",
-        "@serialport/bindings-cpp",
-        "@serialport/parser-byte-length",
-        "@serialport/parser-cctalk",
-        "@serialport/parser-delimiter@12.0.0",
-        "@serialport/parser-inter-byte-timeout",
-        "@serialport/parser-packet-length",
-        "@serialport/parser-readline@12.0.0",
-        "@serialport/parser-ready",
-        "@serialport/parser-regex",
-        "@serialport/parser-slip-encoder",
-        "@serialport/parser-spacepacket",
-        "@serialport/stream",
-        "debug"
-      ]
-    },
-    "slip@1.0.2": {
-      "integrity": "sha512-XrcHe3NAcyD3wO+O4I13RcS4/3AF+S9RvGNj9JhJeS02HyImwD2E3QWLrmn9hBfL+fB6yapagwxRkeyYzhk98g=="
-    },
     "tslib@2.8.1": {
       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
     },
@@ -364,12 +240,6 @@
     },
     "undici-types@7.10.0": {
       "integrity": "sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag=="
-    },
-    "wolfy87-eventemitter@5.2.9": {
-      "integrity": "sha512-P+6vtWyuDw+MB01X7UeF8TaHBvbCovf4HPEMF/SV7BdDc1SMTiBy13SRD71lQh4ExFTG1d/WNzDGDCyOKSMblw=="
-    },
-    "ws@8.18.0": {
-      "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw=="
     },
     "ws@8.18.3": {
       "integrity": "sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg=="
@@ -392,7 +262,6 @@
       "npm:ky@^1.14.0",
       "npm:node-osc@^11.1.1",
       "npm:open@11",
-      "npm:osc@^2.4.5",
       "npm:typebox@^1.0.61"
     ]
   }
