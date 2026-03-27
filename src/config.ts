@@ -5,7 +5,6 @@ import open from 'open';
 import { AccessToken } from '@twurple/auth';
 import { deviceAuthFlow, startDeviceAuth } from './twitch/http_functions.ts';
 
-
 export const Config = Type.Object({
   'twitch': Type.Object({
     'channel': Type.String(),
@@ -14,6 +13,15 @@ export const Config = Type.Object({
       'client_secret': Type.String(),
     }),
   }),
+  'osc': Type.Object({
+    'port': Type.Number(),
+    'device_ip': Type.String(),
+  }),
+  'triggers': Type.Array(Type.Object({
+    'redemption_id': Type.String(),
+    'duration': Type.Number(),
+    'strength': Type.Number(),
+  })),
 });
 export type Config = Type.Static<typeof Config>;
 
@@ -27,7 +35,7 @@ export async function initializeTokens(): Promise<AccessToken> {
     return JSON.parse(await Deno.readTextFile('twitch_tokens.json'));
   } catch (_e: unknown) {
     const params = await startDeviceAuth(clientId);
-    await open(params['verification_uri'])
+    await open(params['verification_uri']);
     const tokens = await deviceAuthFlow(clientId, params['device_code']);
     await Deno.writeTextFile('twitch_tokens.json', JSON.stringify(tokens));
     return tokens;
