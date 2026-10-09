@@ -11,7 +11,6 @@ const authProvider = new RefreshingAuthProvider({
 });
 
 // engage twitch listener
-
 const user = await authProvider.addUserForToken(await initializeTokens());
 
 authProvider.onRefresh(async (_userId, newToken) => {
@@ -23,14 +22,13 @@ const listener = new EventSubWsListener({ apiClient });
 listener.start();
 
 // start OSC
-
 const oscClient = new Client(config['osc']['device_ip'], config['osc']['port']);
 
 // convert the triggers array to a map
 const triggers = new Map(config['triggers'].map((t) => [t.redemption_id, t]));
 
 listener.onChannelRedemptionAdd(user, (e) => {
-  console.log(`received redemption, id: ${e.id}`);
+  console.log(`received redemption: ${e.rewardId}, uniqueId: ${e.id}`);
   const trigger = triggers.get(e.id);
   if (trigger === undefined) return;
   const handle = setInterval(() => {
