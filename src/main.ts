@@ -29,7 +29,7 @@ const triggers = new Map(config['triggers'].map((t) => [t.redemption_id, t]));
 
 listener.onChannelRedemptionAdd(user, (e) => {
   console.log(`received redemption: ${e.rewardId}, uniqueId: ${e.id}`);
-  const trigger = triggers.get(e.id);
+  const trigger = triggers.get(e.rewardId);
   if (trigger === undefined) return;
   const handle = setInterval(() => {
     oscClient.send('/avatar/parameters/motor', trigger['strength']);
